@@ -7,7 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require_relative "get.rb"
 
-1.times do |i|
-  i += 1
+# First 1000 games
+968.times do |i|
+  i += 32
   Game.create(Get.get_game(i))
+  sleep(1)
 end
+
+# Game.create(Get.get_game(19))
