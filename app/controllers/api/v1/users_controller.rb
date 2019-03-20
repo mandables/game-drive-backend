@@ -1,12 +1,12 @@
 class Api::V1::UsersController < ApplicationController
   def index
-    @games = Game.all
-    render json: @games
+    @users = User.all
+    render json: @users
   end
 
   def show
-    @game = Game.find(params[:id])
-    render json: @game
+    @user = User.find(params[:id])
+    render json: @user
   end
 
   def create
