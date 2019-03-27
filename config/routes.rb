@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :games
       resources :user_games
       resources :users
+      delete '/user_games', to: 'user_games#destroy'
     end
   end
 

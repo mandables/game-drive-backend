@@ -18,6 +18,11 @@ class Api::V1::UserGamesController < ApplicationController
     end
   end
 
+  def destroy
+    @user_game = UserGame.find_by(user_id: user_games_params[:user_id], game_id: user_games_params[:game_id])
+    @user_game.destroy
+  end
+
   private
 
   def user_games_params
