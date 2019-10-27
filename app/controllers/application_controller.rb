@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   def issue_token(data)
+    byebug
     JWT.encode(data, secret)
   end
 
@@ -18,6 +19,6 @@ class ApplicationController < ActionController::API
   end
 
   def secret
-    ENV["MY_SUPER_SECRET"]
+    Rails.application.credentials[:secret_key_base]
   end
 end
