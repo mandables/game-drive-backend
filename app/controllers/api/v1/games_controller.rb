@@ -16,6 +16,6 @@ class Api::V1::GamesController < ApplicationController
   private 
 
   def game_params
-    params.require(:game).permit(:title, :img_url)
+    params.require(:game).permit(:title, :img_url, :description)
   end 
 end
