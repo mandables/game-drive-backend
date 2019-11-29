@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  
+  
   namespace :api do
     namespace :v1 do
       resources :reviews
       resources :games
       resources :user_games
       resources :users
+      resources :genres
+      resources :game_genres
       delete '/user_games', to: 'user_games#destroy'
     end
   end
