@@ -10,12 +10,12 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def create 
-    @game = Game.create(game_params)
+    byebug
   end 
 
   private 
 
   def game_params
-    params.require(:game).permit(:title, :img_url, :description)
+    params.require(:game).permit(:title, :img_url, :rawg_id, :description)
   end 
 end

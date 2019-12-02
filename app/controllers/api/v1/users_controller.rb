@@ -5,7 +5,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def signin
-    byebug
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       render json: {username: @user.username, user_id: @user.id, token: issue_token({id: @user.id})}

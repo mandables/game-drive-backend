@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::API
   def issue_token(data)
-    byebug
     JWT.encode(data, secret)
   end
 
