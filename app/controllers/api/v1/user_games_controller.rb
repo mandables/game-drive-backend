@@ -17,18 +17,20 @@ class Api::V1::UserGamesController < ApplicationController
       game.description = user_games_params[:description]
       game.img_url = user_games_params[:img_url]
     }
+    byebug
+    # Assign genres if a new game
     if game.genres == []
+      byebug
       game.assign_genres(user_games_params[:game_genres])
     end 
-    
-    # 
-
-    # @user_game = UserGame.new(user_games_params)
-    # if @user_game.save
-    #   render json: @user_game, status: :created
-    # else
-    #   render json: @user_game.errors, status: :unprocessable_entity
-    # end
+    byebug
+    # Create the user-game relationship 
+    @user_game = UserGame.new(game_id: game.id, user_id: user_games_params[:user_id])
+    if @user_game.save
+      render json: @user_game, status: :created
+    else
+      render json: @user_game.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
