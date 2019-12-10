@@ -1,17 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-require_relative "get.rb"
+# Genre seeds
 
-# First 1000 games
-968.times do |i|
-  i += 32
-  Game.create(Get.get_game(i))
-  sleep(1)
-end
+# genres = 
+# [
+#   "Action",
+#   "Indie",
+#   "Adventure",
+#   "RPG",
+#   "Shooter",
+#   "Strategy",
+#   "Casual",
+#   "Simulation",
+#   "Arcade",
+#   "Puzzle",
+#   "Platformer",
+#   "Racing",
+#   "Sports",
+#   "Massively Multiplayer",
+#   "Family",
+#   "Fighting",
+#   "Board Games",
+#   "Educational",
+#   "Card"
+# ]
 
-# Game.create(Get.get_game(19))
+# genres.each {|genre|
+#   Genre.create(name: genre)
+# }

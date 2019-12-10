@@ -18,6 +18,6 @@ class ApplicationController < ActionController::API
   end
 
   def secret
-    ENV["MY_SUPER_SECRET"]
+    Rails.application.credentials[:secret_key_base]
   end
 end

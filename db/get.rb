@@ -2,12 +2,12 @@ require "rest-client"
 require "json"
 require "pry"
 
-Url = "https://api.mobygames.com/v1/games?api_key=WrxFqDxH6RG0Adl/Ltrw1g==&id="
+
 
 class Get
   def self.get_game(id = 1)
     game_hash = {}
-    game = RestClient.get("https://api.mobygames.com/v1/games?api_key=WrxFqDxH6RG0Adl/Ltrw1g==&id=#{id}")
+    game = RestClient.get("https://api.mobygames.com/v1/games?==&id=#{id}")
     game_data = JSON.parse(game)
     if game_data["games"] != []
     game_hash[:moby_id] = game_data["games"][0]["game_id"]
