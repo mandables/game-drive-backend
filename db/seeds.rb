@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 # Genre seeds
 
-# genres = 
+# genres =
 # [
 #   "Action",
 #   "Indie",

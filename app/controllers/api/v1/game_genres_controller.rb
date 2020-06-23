@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class GameGenresController < ApplicationController
-  before_action :set_game_genre, only: [:show, :update, :destroy]
+  before_action :set_game_genre, only: %i[show update destroy]
 
   # GET /game_genres
   def index
@@ -39,13 +41,14 @@ class GameGenresController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_game_genre
-      @game_genre = GameGenre.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def game_genre_params
-      params.require(:game_genre).permit(:game_id, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_game_genre
+    @game_genre = GameGenre.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def game_genre_params
+    params.require(:game_genre).permit(:game_id, :user_id)
+  end
 end

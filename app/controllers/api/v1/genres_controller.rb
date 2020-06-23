@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class GenresController < ApplicationController
-  before_action :set_genre, only: [:show, :update, :destroy]
+  before_action :set_genre, only: %i[show update destroy]
 
   # GET /genres
   def index
@@ -39,13 +41,14 @@ class GenresController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_genre
-      @genre = Genre.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def genre_params
-      params.require(:genre).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_genre
+    @genre = Genre.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def genre_params
+    params.require(:genre).permit(:name)
+  end
 end
