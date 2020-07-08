@@ -32,6 +32,7 @@ gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
@@ -42,6 +43,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do 
+  gem 'webmock'
+end 
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'dotenv-rails'
@@ -49,3 +54,4 @@ gem 'jwt'
 gem 'pry'
 gem 'rest-client'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
