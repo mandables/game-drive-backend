@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,54 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_191_129_142_221) do
+ActiveRecord::Schema.define(version: 2019_11_29_142221) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'game_genres', force: :cascade do |t|
-    t.integer 'game_id'
-    t.integer 'genre_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "game_genres", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "genre_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'games', force: :cascade do |t|
-    t.integer 'rawg_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.text 'title'
-    t.text 'img_url'
-    t.string 'description'
+  create_table "games", force: :cascade do |t|
+    t.integer "rawg_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "title"
+    t.text "img_url"
+    t.string "description"
   end
 
-  create_table 'genres', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'reviews', force: :cascade do |t|
-    t.text 'content'
-    t.integer 'rating'
-    t.integer 'user_id'
-    t.integer 'game_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'username'
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.integer "user_id"
+    t.integer "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username"
   end
 
-  create_table 'user_games', force: :cascade do |t|
-    t.integer 'user_id'
-    t.integer 'game_id'
-    t.boolean 'played?'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "user_games", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "game_id"
+    t.boolean "played?"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.text 'username'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'password_digest'
+  create_table "users", force: :cascade do |t|
+    t.text "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
+
 end
