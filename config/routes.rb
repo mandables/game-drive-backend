@@ -13,6 +13,13 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do 
+    namespace :v1 do 
+      get '/fetch_games', to: 'api_connector#fetch_games'
+      post '/fetch_game', to: 'api_connector#fetch_game'
+      post '/search', to: 'api_connector#search'
+    end
+  end
   post 'signin', to: 'api/v1/users#signin'
   get 'validate', to: 'api/v1/users#validate'
   # get "games", to: "api/v1/users#games"

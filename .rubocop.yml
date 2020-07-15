@@ -1,0 +1,13 @@
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - Gemfile
+    - Gemfile.lock
+    - db/**
+    - config/**
+    - script/**
+  NewCops: enable
+Style/Documentation:
+  Enabled: false
